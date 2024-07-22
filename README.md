@@ -11,13 +11,13 @@
 1. clone：
 
     ```bash
-    git clone https://github.com/your-username/your-repo.git
+    git clone https://github.com/cozychen0000/calendar.git
     ```
 
 2. 進入專案目錄：
 
     ```bash
-    cd your-repo
+    cd calendar
     ```
 
 3. 安裝依賴：
