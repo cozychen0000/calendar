@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+# React + TypeScript + Vite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 日曆日期選擇器
 
-## Available Scripts
+## 簡介
 
-In the project directory, you can run:
+這個專案是一個簡單的日曆日期選擇器，使用 React、Day.js 和 Tailwind CSS 架構，可以透過 Compound Pattern 實作，增加其靈活性。它允許用戶選擇一個日期範圍，並高亮顯示。
 
-### `npm start`
+## 安裝
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. clone：
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    ```bash
+    git clone https://github.com/your-username/your-repo.git
+    ```
 
-### `npm test`
+2. 進入專案目錄：
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```bash
+    cd your-repo
+    ```
 
-### `npm run build`
+3. 安裝依賴：
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+    pnpm i
+    ```
+  注意: 若無法成功下載，請先將 lock 檔移除，再重新安裝
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 使用方法
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. 啟動開發伺服器：
 
-### `npm run eject`
+    ```bash
+    pnpm dev
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. 打開瀏覽器並導航至 `http://localhost:5173` 來查看日曆日期選擇器。
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 專案結構
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `src/App.js`: 包含日曆邏輯和 UI 的主要應用組件。
+- `src/components/calendar-content.js`: 包含渲染日期的 `CalendarContent` 和 `CalendarContentButton` components。
+- `src/components/calendar-header.js`: 包含渲染日曆標題的 `CalendarHeader` 和 `CalendarHeaderButton` components。
+- `src/hooks/use-select-calendar.js`: 管理日期選擇狀態和邏輯的自定義 hook。
+- `src/utils/format-calendar-items.js`: 用於格式化日曆項目的實用 function。
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 組件
 
-## Learn More
+### `CalendarRoot`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+包裹日曆標題和內容的根組件。
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `CalendarHeader`
+
+顯示當前年和月，以及用於在月份間導航的按鈕的標題組件。
+
+### `CalendarHeaderButton`
+
+在 `CalendarHeader` 中用於導航月份的按鈕組件。
+
+### `CalendarContent`
+
+顯示當前月份日期的內容組件。
+
+### `CalendarContentButton`
+
+在 `CalendarContent` 中用於每個日期的按鈕組件。
+
+## Hooks
+
+### `useSelectCalendar`
+
+處理日曆狀態的自定義 hook，包括所選年份、月份、開始日期和結束日期。它提供了處理日期選擇和月份導航的函數。
+
+## 實用函數
+
+### `formatCalendarItems`
+
+根據給定的年份和月份格式化日曆，顯示該月份與該行的前後月日期的 function。
+
+
+## 問題 1~ 6 分別放在 utils 的 question 中
